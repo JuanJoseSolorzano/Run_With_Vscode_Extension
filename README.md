@@ -1,7 +1,7 @@
 # ⚡ RUN WITH – VSCode Extension
 
 <p align="center">
-  <img src="extension/images/icon.png" alt="Extension Icon" />
+  <img src="./images/icon.png" alt="Extension Icon" />
 </p>
 
 A simple and fast way to **run files with your favorite tools** directly from the VSCode context menu.  
