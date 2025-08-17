@@ -3,7 +3,7 @@
     "displayName": "Run With",
     "description": "Enhance productivity in VSCode with a customizable 'Run With...' context menu to execute files using your preferred tools.",
     "publisher": "Solorzano-JuanJose",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "icon": "images/icon.png",
     "engines": {"vscode": "^1.97.0"},
     "categories": ["Keymaps"],
