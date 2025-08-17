@@ -4,7 +4,7 @@
     "description": "",
     "publisher": "Solorzano-JuanJose",
     "version": "1.0.0",
-    "icon": "images/test.png",
+    "icon": "images/icon.png",
     "engines": {"vscode": "^1.97.0"},
     "categories": ["Keymaps"],
     "main": "./dist/extension.js",
@@ -67,6 +67,6 @@
         "package.json",
         "README.md",
         "LICENSE",
-        "images/test.png"
+        "images/icon.png"
     ]
 }
