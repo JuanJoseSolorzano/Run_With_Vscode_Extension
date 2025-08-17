@@ -1,0 +1,70 @@
+{
+    "name":"run-with",
+    "displayName": "Run With",
+    "description": "",
+    "publisher": "Solorzano-JuanJose",
+    "version": "1.0.0",
+    "icon": "images/test.png",
+    "engines": {"vscode": "^1.97.0"},
+    "categories": ["Keymaps"],
+    "main": "./dist/extension.js",
+    "repository": {"type": "git","url": ""},
+    "contributes":{
+        "commands":[{
+            "command": "run-with.openWith",
+            "title": "Open File With ...",
+            "category": "Explorer"
+        }],
+        "menus": {
+            "explorer/context": [{
+                "command": "run-with.openWith",
+                "when": "resourceScheme == 'file'",
+                "group": "navigation@0"
+            }],
+            "editor/title": [{
+                "command": "run-with.openWith",
+                "group": "navigation@0"
+            }]
+        },
+        "configuration":[
+            {   
+                "title": "Open File Using Apps",
+                "properties": {
+                    "run-with.Main_Configuration":{
+                        "type":"object",
+                        "default":{
+
+                            
+                            "html":[{"alias":"Chrome","cmd":"C:/Program Files/Google/Chrome/Application/chrome.exe"},
+                                    {"alias":"Edge","cmd":"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"}],
+                            "ps1":[{"alias":"Run Pwsh","cmd":"powershell.exe"}]
+                        },
+                        "description": "Configure which program runs the selected file."
+                    },
+                    "run-with.Exec_Extensions":{
+                        "type":"array",
+                        "items": {"type":"string"},
+                        "default":["exe","cmd","ps1","bat"],
+                        "description":"Define the file extensions that trigger execution."
+                    }
+                }
+            }
+        ]
+    },
+    "scripts": {
+        "compile":"tsc -p .",
+        "watch":"tsc -w -p ."
+    },
+    "devDependencies": {
+        "typescript": "^5.8.3",
+        "@types/node": "20.x",
+        "@types/vscode": "^1.97.0"
+        },
+    "files": [
+        "dist/**",
+        "package.json",
+        "README.md",
+        "LICENSE",
+        "images/test.png"
+    ]
+}
