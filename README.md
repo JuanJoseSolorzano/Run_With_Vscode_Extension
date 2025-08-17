@@ -1,4 +1,12 @@
 # ⚡ RUN WITH – VSCode Extension
+<div align="center">
+
+[![Last Updated](https://img.shields.io/visual-studio-marketplace/last-updated/Solorzano-JuanJose.Run-With)](https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/Solorzano-JuanJose.Run-With)](https://marketplace.visualstudio.com/items/Solorzano-JuanJose.Run-With)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/Solorzano-JuanJose.Run-With)](https://marketplace.visualstudio.com/items?itemName=Solorzano-JuanJose.Run-With) [![Downloads](https://img.shields.io/visual-studio-marketplace/d/Solorzano-JuanJose.Run-With)](https://marketplace.visualstudio.com/items?itemName=Solorzano-JuanJose.Run-With) [![Rating Star](https://img.shields.io/visual-studio-marketplace/stars/Solorzano-JuanJose.Run-With)](https://marketplace.visualstudio.com/items?itemName=Solorzano-JuanJose.Run-With&ssr=false#review-details)
+
+
+</div>
 
 <p align="center">
   <img src="./images/icon.png" alt="Extension Icon" />
