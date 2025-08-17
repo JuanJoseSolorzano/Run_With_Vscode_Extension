@@ -1,7 +1,7 @@
 {
     "name":"run-with",
     "displayName": "Run With",
-    "description": "",
+    "description": "Enhance productivity in VSCode with a customizable 'Run With...' context menu to execute files using your preferred tools.",
     "publisher": "Solorzano-JuanJose",
     "version": "1.0.0",
     "icon": "images/icon.png",

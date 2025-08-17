@@ -4,7 +4,8 @@
   <img src="./images/icon.png" alt="Extension Icon" />
 </p>
 
-A simple and fast way to **run files with your favorite tools** directly from the VSCode context menu.  
+A simple and fast way to **run files with your favorite tools** directly from the VSCode context menu.
+Enhance productivity in VSCode with a customizable 'Run With...' context menu to execute files using your preferred tools.
 
 ---
 
