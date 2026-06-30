@@ -1,72 +1,153 @@
 {
-    "name":"run-with",
-    "displayName": "Run With",
-    "description": "Enhance productivity in VSCode with a customizable 'Run With...' context menu to execute files using your preferred tools.",
-    "publisher": "Solorzano-JuanJose",
-    "version": "1.0.2",
+    "name": "tdr-open-file-with",
+    "displayName": "[TDR] Open File With",
+    "description": "A Visual Studio Code extension to open files with an specified application.",
+    "version": "0.0.5",
+    "publisher": "JuanJoseSolorzanoCarrillo",
     "icon": "images/icon.png",
-    "engines": {"vscode": "^1.97.0"},
-    "categories": ["Keymaps"],
-    "main": "./dist/extension.js",
-    "repository": {"type": "git","url": "https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension.git"},
-    "homepage": "https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension#readme",
-    "bugs": { "url": "https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension/issues" },
-    "contributes":{
-        "commands":[{
-            "command": "run-with.openWith",
-            "title": "Open File With ...",
-            "category": "Explorer"
-        }],
+    "repository": {
+        "type": "git",
+        "url": "https://github.vitesco.io/sg922674/vscode_open_file_with"
+    },
+    "engines": {
+        "vscode": "^1.105.0"    
+    },
+    "categories": [
+        "Testing"
+    ],
+    "activationEvents": ["onFileSystem:scheme"],
+    "contributes": {
+        "commands": [
+            {
+                "command": "tdr-open-file-with.openFileWith",
+                "title": "[TDR] Open File With"
+            }
+        ],
         "menus": {
-            "explorer/context": [{
-                "command": "run-with.openWith",
-                "when": "resourceScheme == 'file'",
-                "group": "navigation@0"
-            }],
-            "editor/title": [{
-                "command": "run-with.openWith",
-                "group": "navigation@0"
-            }]
+            "explorer/context": [
+                {
+                    "command": "tdr-open-file-with.openFileWith",
+                    "when": "resourceScheme == 'file'",
+                    "group": "navigation"
+                }
+            ]
         },
-        "configuration":[
-            {   
-                "title": "Open File Using Apps",
-                "properties": {
-                    "run-with.Main_Configuration":{
-                        "type":"object",
-                        "default":{
-
-                            
-                            "html":[{"alias":"Chrome","cmd":"C:/Program Files/Google/Chrome/Application/chrome.exe"},
-                                    {"alias":"Edge","cmd":"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"}],
-                            "ps1":[{"alias":"Run Pwsh","cmd":"powershell.exe"}]
-                        },
-                        "description": "Configure which program runs the selected file."
+        "configuration": {
+            "title": "[TDR] Open File With Configuration",
+            "type": "object",
+            "properties": {
+                "tdr-open-file-with.configuration": {
+                    "scope": "application",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "alias",
+                                "path"
+                            ],
+                            "properties": {
+                                "alias": {
+                                    "type": "string",
+                                    "description": "Display name in picker"
+                                },
+                                "path": {
+                                    "type": "string",
+                                    "description": "Path to the application executable"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
                     },
-                    "run-with.Exec_Extensions":{
-                        "type":"array",
-                        "items": {"type":"string"},
-                        "default":["exe","cmd","ps1","bat"],
-                        "description":"Define the file extensions that trigger execution."
-                    }
+                    "default": {
+                        ".html": [
+                            {
+                                "alias": "Google Chrome",
+                                "path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+                            },
+                            {
+                                "alias": "Microsoft Edge",
+                                "path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+                            }
+                        ],
+                        ".xml": [
+                            {
+                                "alias": "Altova",
+                                "path": "C:\\LegacyApp\\Altova\\Authentic2006\\AUTHENTIC.exe"
+                            },
+                            {
+                                "alias": "InfoPath",
+                                "path": "C:\\Program Files\\Microsoft Office\\Office15\\INFOPATH.EXE"
+                            }
+                        ],
+                        ".tex": [
+                            {
+                                "alias": "TestExecutor",
+                                "path": "C:\\LegacyApp\\TestExecutor\\TestExecutor.exe"
+                            }
+                        ],
+                        ".py": [
+                            {
+                                "alias": "Notepad++",
+                                "path": "C:\\LegacyApp\\Notepad++\\notepad++.exe"
+                            },
+                            {
+                                "alias": "Pythonwin",
+                                "path": "C:\\LegacyApp\\Python39\\Lib\\site-packages\\pythonwin\\pythonwin.exe"
+                            },
+                            {
+                                "alias": "PythonRun",
+                                "path": "C:\\LegacyApp\\Python39\\python.exe"
+                            }
+                        ],
+                        ".bat": [
+                            {
+                                "alias": "Notepad++",
+                                "path": "C:\\LegacyApp\\Notepad++\\notepad++.exe"
+                            },
+                            {
+                                "alias": "Windows Command Prompt",
+                                "path": "C:\\Windows\\System32\\cmd.exe"
+                            }
+                        ],
+                        ".exe": [
+                            {
+                                "alias": "Windows Command Prompt",
+                                "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                            }
+                        ]
+                    },
+                    "markdownDescription": "Configuration for the TDR Open File With extension. Specify the applications to open files with based on their extensions. Each entry should include an alias and the path to the application executable."
                 }
             }
-        ]
+        }
     },
+    "main": "./dist/main.js",
+    "files": [
+        "dist/main.js",
+        "images/",
+        "README.md",
+        "LICENSE.md"
+    ],
     "scripts": {
-        "compile":"tsc -p .",
-        "watch":"tsc -w -p ."
+        "compile": "npm run check-types && node esbuild.js",
+        "check-types": "tsc --noEmit",
+        "watch": "npm-run-all -p watch:*",
+        "watch:esbuild": "node esbuild.js --watch",
+        "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+        "vscode:prepublish": "npm run package",
+        "package": "npm run check-types && node esbuild.js --production"
+    },
+    "dependencies": {
+        "@types/node": "^20.4.2"
     },
     "devDependencies": {
-        "typescript": "^5.8.3",
-        "@types/node": "20.x",
-        "@types/vscode": "^1.97.0"
-        },
-    "files": [
-        "dist/**",
-        "package.json",
-        "README.md",
-        "LICENSE",
-        "images/icon.png"
-    ]
+        "@types/vscode": "^1.105.0",
+        "@vscode/vsce": "^3.9.2",
+        "esbuild": "^0.28.1",
+        "typescript": "^6.0.3",
+        "webpack": "^5.108.1",
+        "webpack-cli": "^7.1.0"
+    }
 }
