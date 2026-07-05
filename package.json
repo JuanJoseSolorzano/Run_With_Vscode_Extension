@@ -2,22 +2,20 @@
     "name": "tdr-open-file-with",
     "displayName": "[TDR] Open File With",
     "description": "A Visual Studio Code extension to open files with an specified application.",
-    "version": "0.0.5",
+    "version": "1.0.1",
     "publisher": "JuanJoseSolorzanoCarrillo",
     "icon": "images/icon.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension"
+        "url": "https://github.vitesco.io/sg922674/vscode_open_file_with"
     },
     "engines": {
-        "vscode": "^1.105.0"
+        "vscode": "^1.105.0"    
     },
     "categories": [
         "Testing"
     ],
-    "activationEvents": [
-        "onFileSystem:scheme"
-    ],
+    "activationEvents": ["onFileSystem:scheme"],
     "contributes": {
         "commands": [
             {
@@ -141,8 +139,10 @@
         "vscode:prepublish": "npm run package",
         "package": "npm run check-types && node esbuild.js --production"
     },
+    "dependencies": {
+        "@types/node": "^20.4.2"
+    },
     "devDependencies": {
-        "@types/node": "^26.0.1",
         "@types/vscode": "^1.105.0",
         "@vscode/vsce": "^3.9.2",
         "esbuild": "^0.28.1",

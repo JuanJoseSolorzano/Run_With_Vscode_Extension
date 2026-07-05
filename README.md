@@ -1,14 +1,7 @@
 # ⚡ Open File With – VSCode Extension
 
-<div align="center">
-
-[![Last Updated](https://img.shields.io/visual-studio-marketplace/last-updated/Solorzano-JuanJose.OpenFileWith)](https://github.com/JuanJoseSolorzano/OpenFileWith_Vscode_Extension)
-[![Version](https://img.shields.io/visual-studio-marketplace/v/Solorzano-JuanJose.OpenFileWith)](https://marketplace.visualstudio.com/items/Solorzano-JuanJose.OpenFileWith)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/Solorzano-JuanJose.OpenFileWith)](https://marketplace.visualstudio.com/items?itemName=Solorzano-JuanJose.OpenFileWith) [![Downloads](https://img.shields.io/visual-studio-marketplace/d/Solorzano-JuanJose.OpenFileWith)](https://marketplace.visualstudio.com/items?itemName=Solorzano-JuanJose.OpenFileWith) [![Rating Star](https://img.shields.io/visual-studio-marketplace/stars/Solorzano-JuanJose.OpenFileWith)](https://marketplace.visualstudio.com/items?itemName=Solorzano-JuanJose.OpenFileWith&ssr=false#review-details)
-
-
 </div>
-<p align="center">
+<p align="left">
   <img src="./images/icon.png" alt="Extension Icon" width="350" height="350" />
 </p>
 
@@ -19,30 +12,40 @@ Enhance productivity in VSCode with a customizable 'Open File With...' context m
 
 ## ✨ Features
 
-- 📂 Right-click a file → **Open File With...**
+- 📂 Right-click a file → **[TDR] Open File With...**
 - ⚙️ Choose the tool you want to open it with.
-- 🔌 Works with scripts, executables, and more.
+- 🔌 Works with scripts, executables (.bat, .exe).
 
 ---
 
 ## 📦 Installation
 
-1. Open **VSCode**
-2. Go to **Extensions** (`Ctrl+Shift+X`)
-3. Search for **Open File With** or search for **JuanJose** 
-4. Click **Install**
+Run the following command:
+
+**PowerShell**
+```bash
+git clone --depth=1 https://github.vitesco.io/sg922674/open_file_with; C:\LegacyApp\VSCode\bin\code.cmd --install-extension open_file_with/tdr-open-file-with.vsix; rm -Recurse -Force open_file_with
+```
+**Git Bash**
+```bash
+git clone --depth=1 https://github.vitesco.io/sg922674/open_file_with && C:\LegacyApp\VSCode\bin\code.cmd --install-extension open_file_with/tdr-open-file-with.vsix && rm -rf open_file_with
+```
+
+**Manual Installation**
+1. Download the latest release of the extension from the [Releases](https://github.vitesco.io/sg922674/open_file_with/releases) page.
+2. Open Visual Studio Code.
+3. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.
+4. Click on the three-dot menu in the top-right corner of the Extensions view and select "Install from VSIX..."
+5. Navigate to the downloaded `.vsix` file and click "Open" to install the extension.
 
 ---
 
 ## 🖱️ Usage
 
 1. Right-click any file in Explorer  
-  ![Context Menu Example](./images/example02.png)  
-2. Select **Open File With...**  
+2. Select **[TDR] Open File With...**  
 3. Choose your tool and open instantly ⚡
-  ![Context Menu Example](./images/example03.png) 
 4. You can also select the option in the editor context:
-  ![Context Menu Example](./images/example01.png) 
 ---
 
 ## 🔧 Configuration
@@ -50,15 +53,12 @@ Enhance productivity in VSCode with a customizable 'Open File With...' context m
 You can configure custom tools in your `settings.json`:
 Go to settings and search for the extension name:
 
-![Context Menu Example](./images/example04.png) 
+Option: `alias` The name of the tool to display in the context menu.
 
-Option: `Exec_Extensions` Here you can add the extension name of a executable file. Eg: .exe, .sh ...
-
-Option: `Main_Configuration`: Define the programs to run a specific file. Eg: select 'Edit in settings.json and add new app:
+Option: `path`: The path to the executable file of the tool.
 
 ```jsonc
 "tdr-open-file-with.configuration": {
-        
         ".html": [
             {
                 "alias": "Google Chrome",
@@ -79,5 +79,41 @@ Option: `Main_Configuration`: Define the programs to run a specific file. Eg: se
                 "path": "C:\\Program Files\\Microsoft Office\\Office15\\INFOPATH.EXE"
             }
         ],
-} 
+        ".tex": [
+            {
+                "alias": "TestExecutor",
+                "path": "C:\\LegacyApp\\TestExecutor\\TestExecutor.exe"
+            }
+        ],
+        ".py": [
+            {
+                "alias": "Notepad++",
+                "path": "C:\\LegacyApp\\Notepad++\\notepad++.exe"
+            },
+            {
+                "alias": "Pythonwin",
+                "path": "C:\\LegacyApp\\Python39\\Lib\\site-packages\\pythonwin\\pythonwin.exe"
+            },
+            {
+                "alias": "PythonRun",
+                "path": "C:\\LegacyApp\\Python39\\python.exe"
+            }
+        ],
+        ".bat": [
+            {
+                "alias": "Notepad++",
+                "path": "C:\\LegacyApp\\Notepad++\\notepad++.exe"
+            },
+            {
+                "alias": "Windows Command Prompt",
+                "path": "C:\\Windows\\System32\\cmd.exe"
+            }
+        ],
+        ".exe": [
+            {
+                "alias": "Windows Command Prompt",
+                "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+            }
+        ]
+    },
 ```
