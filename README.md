@@ -24,15 +24,15 @@ Run the following command:
 
 **PowerShell**
 ```bash
-git clone --depth=1 https://github.vitesco.io/sg922674/open_file_with; C:\LegacyApp\VSCode\bin\code.cmd --install-extension open_file_with/tdr-open-file-with.vsix; rm -Recurse -Force open_file_with
+git clone --depth=1 https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension; C:\LegacyApp\VSCode\bin\code.cmd --install-extension Run_With_Vscode_Extension/open-file-with.vsix; rm -Recurse -Force Run_With_Vscode_Extension
 ```
 **Git Bash**
 ```bash
-git clone --depth=1 https://github.vitesco.io/sg922674/open_file_with && C:\LegacyApp\VSCode\bin\code.cmd --install-extension open_file_with/tdr-open-file-with.vsix && rm -rf open_file_with
+git clone --depth=1 https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension && C:\LegacyApp\VSCode\bin\code.cmd --install-extension Run_With_Vscode_Extension/open-file-with.vsix && rm -rf Run_With_Vscode_Extension
 ```
 
 **Manual Installation**
-1. Download the latest release of the extension from the [Releases](https://github.vitesco.io/sg922674/open_file_with/releases) page.
+1. Download the latest release of the extension from the [Releases](https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension/releases) page.
 2. Open Visual Studio Code.
 3. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.
 4. Click on the three-dot menu in the top-right corner of the Extensions view and select "Install from VSIX..."
@@ -43,7 +43,7 @@ git clone --depth=1 https://github.vitesco.io/sg922674/open_file_with && C:\Lega
 ## 🖱️ Usage
 
 1. Right-click any file in Explorer  
-2. Select **[TDR] Open File With...**  
+2. Select **Open File With...**  
 3. Choose your tool and open instantly ⚡
 4. You can also select the option in the editor context:
 ---
@@ -77,12 +77,6 @@ Option: `path`: The path to the executable file of the tool.
             {
                 "alias": "InfoPath",
                 "path": "C:\\Program Files\\Microsoft Office\\Office15\\INFOPATH.EXE"
-            }
-        ],
-        ".tex": [
-            {
-                "alias": "TestExecutor",
-                "path": "C:\\LegacyApp\\TestExecutor\\TestExecutor.exe"
             }
         ],
         ".py": [

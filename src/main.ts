@@ -2,7 +2,7 @@ import * as code from 'vscode';
 
 // Main entry point for Vscode extensions
 export function activate(context: code.ExtensionContext){
-    let command = code.commands.registerCommand("tdr-open-file-with.openFileWith",async (uri:code.Uri) => {
+    let command = code.commands.registerCommand("open-file-with.openFileWith",async (uri:code.Uri) => {
         const { openFileWith } = await import('./open_file_with');
         openFileWith(uri);
     });

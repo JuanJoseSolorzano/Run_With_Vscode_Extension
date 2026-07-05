@@ -1,13 +1,13 @@
 {
-    "name": "tdr-open-file-with",
-    "displayName": "[TDR] Open File With",
+    "name": "open-file-with",
+    "displayName": "Open File With",
     "description": "A Visual Studio Code extension to open files with an specified application.",
     "version": "1.0.1",
     "publisher": "JuanJoseSolorzanoCarrillo",
     "icon": "images/icon.png",
     "repository": {
         "type": "git",
-        "url": "https://github.vitesco.io/sg922674/vscode_open_file_with"
+        "url": "https://github.com/JuanJoseSolorzano/Run_With_Vscode_Extension"
     },
     "engines": {
         "vscode": "^1.105.0"    
@@ -19,24 +19,24 @@
     "contributes": {
         "commands": [
             {
-                "command": "tdr-open-file-with.openFileWith",
-                "title": "[TDR] Open File With"
+                "command": "open-file-with.openFileWith",
+                "title": "Open File With"
             }
         ],
         "menus": {
             "explorer/context": [
                 {
-                    "command": "tdr-open-file-with.openFileWith",
+                    "command": "open-file-with.openFileWith",
                     "when": "resourceScheme == 'file'",
                     "group": "navigation"
                 }
             ]
         },
         "configuration": {
-            "title": "[TDR] Open File With Configuration",
+            "title": "Open File With Configuration",
             "type": "object",
             "properties": {
-                "tdr-open-file-with.configuration": {
+                "open-file-with.configuration": {
                     "scope": "application",
                     "type": "object",
                     "additionalProperties": {
@@ -79,12 +79,6 @@
                             {
                                 "alias": "InfoPath",
                                 "path": "C:\\Program Files\\Microsoft Office\\Office15\\INFOPATH.EXE"
-                            }
-                        ],
-                        ".tex": [
-                            {
-                                "alias": "TestExecutor",
-                                "path": "C:\\LegacyApp\\TestExecutor\\TestExecutor.exe"
                             }
                         ],
                         ".py": [
